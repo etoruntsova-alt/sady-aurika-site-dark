@@ -2355,3 +2355,6 @@ html { font-size: 120%; }
 
 /* Правки 8: экран 2 — фото мастера без достройки, до краёв арки */
 #экран-02 .арка--лево img[src*="master-krug"] { object-fit: cover !important; object-position: 50% 0% !important; transform: none !important; }
+
+/* Правки логотипа: пропорции эмблемы не меняются ни на каком экране (высота задана, ширина считается по картинке) */
+.шапка__лого img.шапка__эмблема { width: auto !important; max-width: none !important; min-width: 0; object-fit: contain !important; flex: none !important; }

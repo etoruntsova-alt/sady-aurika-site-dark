@@ -109,7 +109,7 @@
 <body class="с-липкой-кнопкой">
 <section class="блок блок--первый-экран первый-экран--разворот тёмный" id="экран-1" data-тип="первый-экран" data-схема="разворот" data-ключ-макета="светлая" data-картинка="фото"><div class="стык стык--низ" aria-hidden="true" style="--стык-сосед: var(--цвет-тёмный-фон-2, var(--цвет-тёмный-фон))"></div>
   <header class="шапка шапка--сайт">
-    <a class="шапка__лого" href="#экран-1"><img class="шапка__эмблема" src="img/logo.png" alt="Сады Аурики — эмблема"><span class="шапка__слово"><b>Сады Аурики</b><i>производственное объединение</i></span></a>
+    <a class="шапка__лого" href="#экран-1"><img class="шапка__эмблема" width="1000" height="803" src="img/logo.png" alt="Сады Аурики — эмблема"><span class="шапка__слово"><b>Сады Аурики</b><i>производственное объединение</i></span></a>
     <nav class="шапка__меню" aria-label="Разделы сайта"><a href="#экран-02">Экскурсии</a><a href="#экран-05">О нас / события</a><a href="#экран-03">Где купить</a><a href="#экран-07">Контакты</a></nav>
     <a class="шапка__тел" href="tel:+79092780053">+7 (909) 278-00-53</a>
   </header>
@@ -530,5 +530,10 @@
   if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
   window.addEventListener('load', fit); window.addEventListener('resize', fit); fit();
 })();
-</script></body>
+</script><script>/* логотип: ширина всегда = высота × пропорция файла, чтобы не вытягивался на любом телефоне */
+(function(){var i=document.querySelector('img.шапка__эмблема');if(!i)return;
+function f(){var r=(+i.getAttribute('width'))/(+i.getAttribute('height'));var h=i.getBoundingClientRect().height;if(h&&r){i.style.setProperty('width',(h*r)+'px','important');}}
+i.style.removeProperty('width');window.addEventListener('load',f);window.addEventListener('resize',function(){i.style.removeProperty('width');f();});if(i.complete)f();})();
+</script>
+</body>
 </html>
